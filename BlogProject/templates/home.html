@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Home Page</title>
+{% endblock title %}
+
+
+{% block body %}
+
+    <!-- main div  -->
+    <div class="container my-5">
+
+        <!-- heading div  -->
+        <div class="container text-center bg-secondary p-4 rounded-3 shadow">
+            <h1 class="text-light">All Blogs</h1>
+        </div>
+
+        <!-- blogs div  -->
+        <div class="container my-4">
+
+            {% for blog in blogs %}
+            <div class="container mb-3 p-3 shadow">
+                <h3 class="text-decoration-underline">{{blog.title}}</h3>
+                <p class="lead">{{blog.desc}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock body %}
